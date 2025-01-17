@@ -4,7 +4,13 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            #region Part 01 Polymorphism
+
+            //Done [Check NoteBad].
+
+            #endregion
+
         }
     }
 }
