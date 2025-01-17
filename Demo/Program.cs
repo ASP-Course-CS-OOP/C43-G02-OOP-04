@@ -1,4 +1,6 @@
 ﻿
+using Demo.Operators_Overloading;
+
 namespace Demo
 {
     internal class Program
@@ -77,6 +79,40 @@ namespace Demo
             ////Console.WriteLineChar('E');
             ////Console.WriteLineInt(10);
             ////Console.WriteLineBool(true);
+
+            #endregion
+
+            #endregion
+
+            #region Part 03 Operators Overloading - Binary Operators
+
+            #region Ex01
+
+            //Complex c1 = new Complex() { Real = 5, Imag = 4 };
+            //Complex c2 = new Complex() { Real = 3, Imag = 2 };
+
+            //Complex c3 = c1 + c2;
+
+            //Console.WriteLine($"C1: {c1}"); //  C1: 5 + 4i
+            //Console.WriteLine($"C2: {c2}"); //  C2: 3 + 2i
+            //Console.WriteLine("----------");//  ----------
+            //Console.WriteLine($"C3: {c3}"); //  C3: 8 + 6i
+
+            #endregion
+
+            #region Ex02
+
+            //Complex c1 = new Complex() { Real = 5, Imag = 4 };
+            //Complex c2 = new Complex() { Real = 3, Imag = 2 };
+
+            //Complex c3 = c1 + c2;
+            //Complex c4 = c1 + c2 + c3;
+
+            //Console.WriteLine($"C1: {c1}");//  C1: 5 + 4i
+            //Console.WriteLine($"C2: {c2}");//  C2: 3 + 2i
+            //Console.WriteLine($"C3: {c3}");//  C3: 8 + 6i
+            //Console.WriteLine("----------");// ----------
+            //Console.WriteLine($"C3: {c4}");//  C3: 16 + 12i
 
             #endregion
 
