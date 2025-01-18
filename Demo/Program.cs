@@ -118,6 +118,36 @@ namespace Demo
 
             #endregion
 
+            #region Part 04 Operators Overloading - Unary Operators ++ --
+
+            #region Ex01 - Complex c3 = ++c1 [Prefix]
+
+            //Complex c1 = new Complex() { Real = 5, Imag = 4 };
+            //Complex c2 = new Complex() { Real = 2, Imag = 3 };
+
+            //Complex c3 = ++c1;// c3 will contain the result of (++c1) which is new object, and (++c1 mean c1 = c1+1) so the reference "c1" also will refer to the new object (new Complex(){Real = 6, Imag = 5}), so the object ( new Complex() { Real = 5, Imag = 4 } ) Became Unreachable
+
+            //Console.WriteLine($"C1: {c1}");//C1: 6 + 5i
+            //Console.WriteLine($"C1: {c3}");//C3: 6 + 5i 
+
+            #endregion
+
+            #region Ex02 - Complex c3 = c1++ [Suffix]
+
+            //Complex c1 = new Complex() { Real = 5, Imag = 4 };
+            //Complex c2 = new Complex() { Real = 2, Imag = 3 };
+
+            //Complex c3 = c1++;// "c3" will contain the result of "c1" first which is the object ( new Complex() { Real = 5, Imag = 4 } ),
+            //                  // and then (c1++ mean c1 = c1+1) so the reference "c1" also will refer to the new object (new Complex(){Real = 6, Imag = 5}),
+            //                  // the object ( new Complex() { Real = 5, Imag = 4 } ) is not unreachable because "c3" Hold it 
+
+            //Console.WriteLine($"C1: {c1}");//C1: 6 + 5i
+            Console.WriteLine($"C3: {c3}");//C3: 5 + 4i 
+
+            #endregion
+
+            #endregion
+
         }
 
     }
