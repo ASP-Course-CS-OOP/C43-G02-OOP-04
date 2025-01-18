@@ -168,6 +168,58 @@ namespace Demo
 
             #endregion
 
+            #region Part 06 Casting Operators Overloading (type)
+
+            #region Ex01 Explicit Casting of (int) casting operator
+
+            //Complex c1 = new Complex() { Real = 3, Imag = 4 };
+            //int x = (int)c1;
+
+            //Console.WriteLine(x);//3
+
+
+            #endregion
+
+            #region Ex02 Implicit Casting of (string) casting operator
+
+            //Complex c1 = new Complex() { Real = 6, Imag = 8 };
+            //string x = c1; // Implicit Casting ( Instead of writing [ string x = (string) c1; ] ).
+
+            //Console.WriteLine(x);// 6 + 8i
+
+            /*
+
+                 * But we don't recommend to make implicit casting overload on the casting operators for some reasons : 
+
+                 * 1- Readability => 
+                 * 
+                 *  Complex c1 = new Complex() { Real = 6, Imag = 8 };
+                 *  string x = c1
+                 *  
+                 *  When any one read this, he will say how convert from Complex to int or how refer by reference of type string to object of type Complex , although c# is strongly type language 
+                 *  so => 
+                 *  
+                 *  Complex c1 = new Complex() { Real = 6, Imag = 8 };
+                 *  string x = c1
+                 *  
+                 *  Is More Readable
+
+                 *  2- Compiler Noticing 
+                 *  
+                 *  We recommend to use  explicit casting overload because if you forget writing the casting operator, it notice you to put it 
+                 *  
+                 *  Complex c1 = new Complex() { Real = 6, Imag = 8 };
+                 *  string x = c1
+                 *  
+                 *  Compiler Will notice you here if you use explicit casting overload.
+
+             */
+
+
+            #endregion
+
+            #endregion
+
         }
 
     }
