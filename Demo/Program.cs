@@ -142,9 +142,29 @@ namespace Demo
             //                  // the object ( new Complex() { Real = 5, Imag = 4 } ) is not unreachable because "c3" Hold it 
 
             //Console.WriteLine($"C1: {c1}");//C1: 6 + 5i
-            Console.WriteLine($"C3: {c3}");//C3: 5 + 4i 
+            //Console.WriteLine($"C3: {c3}");//C3: 5 + 4i 
 
             #endregion
+
+            #endregion
+
+            #region Part 05 Operators Overloading - Relational Operators (> <) (>= <=) (== !=)
+
+            Complex c1 = new Complex() { Real = 7, Imag = 4 };
+            Complex c2 = new Complex() { Real = 7, Imag = 4 };
+
+            if (c1 > c2)
+            {
+                Console.WriteLine("C1 is greater than C2");
+            }
+            else if (c1 < c2)
+            {
+                Console.WriteLine("C1 is less than C2");
+            }
+            else
+            {
+                Console.WriteLine("C1 equals c2");
+            }
 
             #endregion
 

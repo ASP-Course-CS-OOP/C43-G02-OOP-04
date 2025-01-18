@@ -52,6 +52,78 @@ namespace Demo.Operators_Overloading
 
         #endregion
 
+        #region Part 05 Operators Overloading - Relational Operators (> <) (>= <=) (== !=)
+
+        public static bool operator >(Complex c1,Complex c2) // Comparison Operators are Matched Operators/Coupled operators, Mean That if you overload on ">" then you must overload "<", and if you overload ">=" then you must overload "<=" and also for "==" "!=".
+        {
+
+            #region Approach 1
+
+            //if (c1?.Real > c2?.Real)
+            //{
+            //    return true;
+            //}
+            //else if(c1?.Real < c2?.Real)
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //    if(c1?.Imag > c2?.Imag)
+            //    {
+            //        return true;
+            //    }
+            //    return false;
+            //} 
+
+            #endregion
+
+            #region Approach 2 [Easy]
+            
+            if (c1?.Real == c2?.Real)
+                return c1?.Imag > c2?.Imag;
+            else
+                return c1?.Real > c2?.Real; 
+
+            #endregion
+        }
+
+        public static bool operator <(Complex c1, Complex c2) 
+        {
+
+            #region Approach 1
+            
+            //if (c1?.Real < c2?.Real)
+            //{
+            //    return true;
+            //}
+            //else if (c1?.Real > c2?.Real)
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //    if (c1?.Imag < c2?.Imag)
+            //    {
+            //        return true;
+            //    }
+            //    return false;
+            //} 
+
+            #endregion
+
+            #region Approach 2 [Easy]
+
+            if (c1?.Real == c2?.Real)
+                return c1?.Imag < c2?.Imag;
+            else
+                return c1?.Real < c2?.Real;
+
+            #endregion
+        }
+
+        #endregion
+
         public override string ToString()
         {
             return $"{Real} + {Imag}i";
