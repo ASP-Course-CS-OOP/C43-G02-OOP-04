@@ -150,21 +150,21 @@ namespace Demo
 
             #region Part 05 Operators Overloading - Relational Operators (> <) (>= <=) (== !=)
 
-            Complex c1 = new Complex() { Real = 7, Imag = 4 };
-            Complex c2 = new Complex() { Real = 7, Imag = 4 };
+            //Complex c1 = new Complex() { Real = 7, Imag = 4 };
+            //Complex c2 = new Complex() { Real = 7, Imag = 4 };
 
-            if (c1 > c2)
-            {
-                Console.WriteLine("C1 is greater than C2");
-            }
-            else if (c1 < c2)
-            {
-                Console.WriteLine("C1 is less than C2");
-            }
-            else
-            {
-                Console.WriteLine("C1 equals c2");
-            }
+            //if (c1 > c2)
+            //{
+            //    Console.WriteLine("C1 is greater than C2");
+            //}
+            //else if (c1 < c2)
+            //{
+            //    Console.WriteLine("C1 is less than C2");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("C1 equals c2");
+            //}
 
             #endregion
 

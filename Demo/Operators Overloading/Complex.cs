@@ -86,6 +86,7 @@ namespace Demo.Operators_Overloading
                 return c1?.Real > c2?.Real; 
 
             #endregion
+
         }
 
         public static bool operator <(Complex c1, Complex c2) 
@@ -120,6 +121,7 @@ namespace Demo.Operators_Overloading
                 return c1?.Real < c2?.Real;
 
             #endregion
+
         }
 
         #endregion
