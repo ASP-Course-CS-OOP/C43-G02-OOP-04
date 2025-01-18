@@ -1,4 +1,5 @@
 ﻿
+using Demo.Casting_Operators_Overloading;
 using Demo.Operators_Overloading;
 
 namespace Demo
@@ -215,6 +216,54 @@ namespace Demo
 
              */
 
+
+            #endregion
+
+            #endregion
+
+            #region Part 07 Casting Operator Overloading - Need
+
+            //User user = new User()
+            //{
+            //    Id = 12345,
+            //    FullName = "Eslam Elsaadany",
+            //    Email = "eslam.saadany22@gmail.com",
+            //    Password = "123456",
+            //    SecurityStmp = Guid.NewGuid()
+            //};
+
+            #region But I Don't need to view this user in this form of data, I need to cast it to user of Type (UserViewModel), to view it in Form Of Data Of (UserViewModel). 
+
+            //// But I Don't need to view this user in this form of data, I need to cast it to user of Type (UserViewModel), to view it in Form Of Data Of (UserViewModel). 
+
+            ////UserViewModel userViewModel01 = user;//Error , because Reference of Type "UserViewModel" can only refer to object of type "UserViewModel"
+
+            ////UserViewModel userViewModel02 = (UserViewModel)user;//Error, Because the casting operator (UserViewModel) can only cast from object of type "UserViewModel" to object of type "UserViewModel".
+
+            ////Like in this case => 
+
+            //object obj = new UserViewModel() { Id = 1001 ,FName = "Eslam",LName = "Elsaadany",Email = "eslam.saadany222@gmail.com",Password = "123456"};
+            //UserViewModel userViewModel03 = (UserViewModel)obj;
+
+            //Console.WriteLine(userViewModel03); // ID: 1001
+            //                                    // FName: Eslam
+            //                                    // LName: Elsaadany
+            //                                    // Email: eslam.saadany222 @gmail.com
+            //                                    // Password: 123456 
+
+            #endregion
+
+            #region Cast From object of type "User" to object of type "UserViewModel" by overload on the casting operator (UserViewModel) to let it do this new behaviour [Mapping from "User" to "UserViewModel"]
+
+            //UserViewModel userViewModel = (UserViewModel)user;
+
+            //Console.WriteLine(userViewModel);
+
+            //// ID: 12345
+            //// FName: Eslam
+            //// LName: Elsaadany
+            //// Email: eslam.saadany22 @gmail.com
+            //// Password: 123456
 
             #endregion
 
