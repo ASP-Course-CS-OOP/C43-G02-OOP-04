@@ -70,13 +70,40 @@
 
             #region Part02
 
-            #region Q01:Define an interface named IShape with a property Area and a methodDisplayShapeInfo.Create two interfaces, ICircle and IRectangle, that inherit fromIShape.Implement these interfaces in classes Circle and Rectangle. Test yourimplementation by creating instances of both classes and displaying their shapeinformation.
+            #region Q01 - Define an interface named IShape with a property Area and a methodDisplayShapeInfo.Create two interfaces, ICircle and IRectangle, that inherit fromIShape.Implement these interfaces in classes Circle and Rectangle. Test yourimplementation by creating instances of both classes and displaying their shapeinformation.
 
             //ICircle circle = new Circle(5);
             //circle.DisplayShapeInfo();
 
             //IRectangle rectangle = new Rectangle(4, 6);
             //rectangle.DisplayShapeInfo();
+
+            #endregion
+
+            #region Q02 - In this example, we start by defining the IAuthenticationService interface with two methods: AuthenticateUser and AuthorizeUser.The BasicAuthenticationServiceclass implements this interface and provides the specific implementation for thesemethods.
+
+            IAuthenticationService authService = new BasicAuthenticationService();
+
+            string username = "user1";
+            string password = "password1";
+            string role = "Admin";
+
+            if (authService.AuthenticateUser(username, password))
+            {
+                Console.WriteLine($"{username} authenticated successfully.");
+                if (authService.AuthorizeUser(username, role))
+                {
+                    Console.WriteLine($"{username} authorized as {role}.");
+                }
+                else
+                {
+                    Console.WriteLine($"{username} is not authorized as {role}.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Authentication failed.");
+            }
 
             #endregion
 
