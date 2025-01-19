@@ -30,6 +30,12 @@
 
             #endregion
 
+            #region Q05 - Which keyword is used to implement an interface in a class in C#?
+
+            // d) implements
+
+            #endregion
+
             #endregion
         }
     }
