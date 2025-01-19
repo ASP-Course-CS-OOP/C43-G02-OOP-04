@@ -42,7 +42,9 @@
 
             #endregion
 
-            #region Q07 - 
+            #region Q07 - In C#, can an interface have explicit access modifiers for its members?
+
+            // b) No, all members are implicitly public
 
             #endregion
 
