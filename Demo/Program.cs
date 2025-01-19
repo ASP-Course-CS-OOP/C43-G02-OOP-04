@@ -48,6 +48,12 @@
 
             #endregion
 
+            #region Q08 - What is the purpose of an explicit interface implementation in C#?
+
+            // b) To provide a clear separation between interface and class members
+
+            #endregion
+
             #endregion
         }
     }
