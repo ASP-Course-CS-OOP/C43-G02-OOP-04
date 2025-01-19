@@ -4,7 +4,15 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            #region Part01
+
+            #region Q01 - What is the primary purpose of an interface in C#?
+
+            //a) To provide a way to implement multiple inheritance
+
+            #endregion
+
+            #endregion
         }
     }
 }
