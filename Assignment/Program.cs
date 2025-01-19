@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+
             #region Part01
 
             #region Q01 - What is the primary purpose of an interface in C#?
@@ -121,6 +122,7 @@
             #endregion
 
             #endregion
+
         }
     }
 }
