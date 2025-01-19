@@ -12,6 +12,12 @@
 
             #endregion
 
+            #region Q02 - Which of the following is NOT a valid access modifier for interface members in C#?
+
+            // a) private
+
+            #endregion
+
             #endregion
         }
     }
