@@ -82,28 +82,41 @@
 
             #region Q02 - In this example, we start by defining the IAuthenticationService interface with two methods: AuthenticateUser and AuthorizeUser.The BasicAuthenticationServiceclass implements this interface and provides the specific implementation for thesemethods.
 
-            IAuthenticationService authService = new BasicAuthenticationService();
+            //IAuthenticationService authService = new BasicAuthenticationService();
 
-            string username = "user1";
-            string password = "password1";
-            string role = "Admin";
+            //string username = "user1";
+            //string password = "password1";
+            //string role = "Admin";
 
-            if (authService.AuthenticateUser(username, password))
-            {
-                Console.WriteLine($"{username} authenticated successfully.");
-                if (authService.AuthorizeUser(username, role))
-                {
-                    Console.WriteLine($"{username} authorized as {role}.");
-                }
-                else
-                {
-                    Console.WriteLine($"{username} is not authorized as {role}.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Authentication failed.");
-            }
+            //if (authService.AuthenticateUser(username, password))
+            //{
+            //    Console.WriteLine($"{username} authenticated successfully.");
+            //    if (authService.AuthorizeUser(username, role))
+            //    {
+            //        Console.WriteLine($"{username} authorized as {role}.");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"{username} is not authorized as {role}.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Authentication failed.");
+            //}
+
+            #endregion
+
+            #region Q03 - we define the INotificationService interface with a method SendNotification that takes a recipient and a message as parameters.
+
+                //INotificationService emailService = new EmailNotificationService();
+                //emailService.SendNotification("eslam.saadany22@gmail.com", "Welcome to the platform!");
+
+                //INotificationService smsService = new SmsNotificationService();
+                //smsService.SendNotification("01022010887", "Your OTP is 123456.");
+
+                //INotificationService pushService = new PushNotificationService();
+                //pushService.SendNotification("Iphone 8 Plus", "You have a new message.");
 
             #endregion
 
