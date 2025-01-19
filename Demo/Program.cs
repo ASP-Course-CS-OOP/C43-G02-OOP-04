@@ -54,6 +54,12 @@
 
             #endregion
 
+            #region Q09 - In C#, can an interface have a constructor?
+
+            // b) No, interfaces cannot have constructors
+
+            #endregion
+
             #endregion
         }
     }
