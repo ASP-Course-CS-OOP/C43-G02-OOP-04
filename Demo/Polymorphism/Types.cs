@@ -59,13 +59,13 @@ namespace Demo.Polymorphism
 
         //You can't override the "MyFunc01()" method to add new behavior to it, because the parent "TypeA" not mark it as virtual method, but if you need to add new behavior to it,
         //you can make new method with same name and hide the inherited method => using "new" keyword.
-        public new void MyFunc01()
+        public new void MyFunc01() // Static Binded Method [Because new Keyword]
         {
             Console.WriteLine("MyFunc01 => Iam Derived [Child]");
         }
 
         //Apply Overriding using "override" Keyword => But Method "MyFunc02()" must be non-private and virtual inside parent class to make override on it.
-        public override void MyFunc02()
+        public override void MyFunc02() // // Dynamic Binded Method [Because override Keyword]
         {
             Console.WriteLine($"MyFunc02 => TypeB: A = {A}, B = {B}"); ;
         }

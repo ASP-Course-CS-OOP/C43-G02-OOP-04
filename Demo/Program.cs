@@ -309,13 +309,16 @@ namespace Demo
 
             #endregion
 
-            #region Ex02 - Reference from parent can refer to object of type parent or object of type any class inherit from parent [ TypeB typeB = new TypeB(5, 6); ].
+            #region Ex03 - Reference from parent can refer to object of type parent or object of type any class inherit from parent [ TypeA typeA = new TypeB(5, 3); ].
 
-            //The Reference "typeA" which is of type "TypeA" can access only the properties and methods of "TypeA" that "TypeB" inherit from "TypeA".  
+            ////The Reference "typeA" which is of type "TypeA" can access only the properties and methods of "TypeA" that "TypeB" inherit from "TypeA".  
 
-            TypeA typeA = new TypeB(5, 3);
-            typeA.A = 11;// "TypeB" inherit Property "A" from "TypeA" so the reference "typeA" which of type "TypeA" can access it.
-            //typeA.B = 6;// "TypeB" not inherit Property "B" from "TypeA" so the reference "typeA" which of type "TypeA" can't access it.
+            //TypeA typeA = new TypeB(5, 3);
+            //typeA.A = 11;// "TypeB" inherit Property "A" from "TypeA" so the reference "typeA" which of type "TypeA" can access it.
+            ////typeA.B = 6;// "TypeB" not inherit Property "B" from "TypeA" so the reference "typeA" which of type "TypeA" can't access it.
+
+            //typeA.MyFunc01();// MyFunc01 => Iam Base [Parent]  - [Static Binding]
+            //typeA.MyFunc02(); // MyFunc02 => TypeB: A = 11, B = 3 - [Dynamic Binding]
 
             #endregion
 
