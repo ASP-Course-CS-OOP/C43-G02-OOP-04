@@ -29,6 +29,53 @@ namespace Demo
 
         #endregion
 
+        #region Part 11 Binding is a Behaviour
+
+        #region Ex01 - No Binding [this is Reference "employee" from Child "FullTimeEmployee" refer to object "fullTimeEmployee = new FullTimeEmployee();" of type Child "FullTimeEmployee"].
+
+        public static void ProcessEmployee(FullTimeEmployee employee) // employee = fullTimeEmployee => new FullTimeEmployee() { Id = 1000, Name = "Eslam Elsaadany", Age = 22, Salary = 10_000 }; => No Binding [this is Reference from Child refer to object of type Child].
+        {
+            if (employee is { })
+            {
+                employee.MyFunc01();
+                employee.MyFunc02();
+            }
+        }
+
+        #endregion
+
+        #region Ex02 - No Binding [this is Reference "employee" from Child "PartTimeEmployee" refer to object "partTimeEmployee = new PartTimeEmployee()" of type Child "PartTimeEmployee"].
+
+        public static void ProcessEmployee(PartTimeEmployee employee) // employee = partTimeEmployee => new PartTimeEmployee() { Id = 1001, Name = "Ahmed Ashraf", Age = 25, HourRate = 250 }; => No Binding [this is Reference from Child refer to object of type Child].
+        {
+            if (employee is { })
+            {
+                employee.MyFunc01();
+                employee.MyFunc02();
+            }
+        }
+
+        #endregion
+
+        // But This Overload Is Useless Because The Behavior In The Two Methods Is The Same[ Make one method that can take object of type class "Employee" or object of type any class inherit from "Employee" like "FullTimeEmployee" - "PartTimeEmployee"] 
+
+        #region Ex03 - Binding [this is Reference "employee" from Parent "Employee" refer to object "fullTimeEmployee = new FullTimeEmployee()" of type Child "FullTimeEmployee"] || [this is Reference "employee" from Parent "Employee" refer to object "partTimeEmployee = new PartTimeEmployee()" of type Child "PartTimeEmployee"]
+
+        public static void ProcessEmployee(Employee employee) // employee = fullTimeEmployee => new FullTimeEmployee() { Id = 1000, Name = "Eslam Elsaadany", Age = 22, Salary = 10000 }; =>  Binding [this is Reference from Parent refer to object of type Child].
+                                                              // employee = PartTimeEmployee => new PartTimeEmployee() { Id = 1001, Name = "Ahmed Ashraf", Age = 25, HourRate = 250 };    =>  Binding [this is Reference from Parent refer to object of type Child].
+        {
+            if (employee is { })
+            {
+                employee.MyFunc01();// Static Binding[new] => "Iam Employee!" - Regardless The object is of type "FullTimeEmployee" Or "PartTimeEmployee".
+                employee.MyFunc02();// Dynamic Binding[override] => "FullTimeEmployee => Id = 1000, Name = Eslam Elsaadany, Age = 22, Salary = $10,000.00" [In case the object is of type "FullTimeEmployee"]
+                                    //                           => "PartTimeEmployee => Id = 1001, Name = Ahmed Ashraf, Age = 25, HourRate = 250" [In case the object is of type "PartTimeEmployee"]
+            }
+        }
+
+        #endregion
+
+        #endregion
+
         static void Main(string[] args)
         {
 
@@ -363,6 +410,47 @@ namespace Demo
 
             #endregion
 
+            #region Part 11 Binding is a Behaviour
+
+            #region Ex01 - No Binding [this is Reference "fullTimeEmployee" from Child "FullTimeEmployee" refer to object "new FullTimeEmployee()" of type Child "FullTimeEmployee"].
+
+            //FullTimeEmployee fullTimeEmployee = new FullTimeEmployee() { Id = 1000, Name = "Eslam Elsaadany", Age = 22, Salary = 10_000 };
+
+            //ProcessEmployee(fullTimeEmployee);// Iam Full Time Employee!
+            //                                  // FullTimeEmployee => Id = 1000, Name = Eslam Elsaadany, Age = 22, Salary = $10,000.00
+
+            #endregion
+
+            #region Ex02 - No Binding [this is Reference "PartTimeEmployee" from Child "PartTimeEmployee" refer to object "new PartTimeEmployee()" of type Child "PartTimeEmployee"].
+
+            //PartTimeEmployee PartTimeEmployee = new PartTimeEmployee() { Id = 1001, Name = "Ahmed Ashraf", Age = 25, HourRate = 250 };
+
+            //ProcessEmployee(PartTimeEmployee); // Iam Part Time Employee!
+            //                                   // PartTimeEmployee => Id = 1001, Name = Ahmed Ashraf, Age = 25, HourRate = 250
+
+            #endregion
+
+            #region  Ex03 
+
+            #region Ex03.1 - Binding [this is Reference "fullTimeEmployee" from Parent "Employee" refer to object "new FullTimeEmployee()" of type Child "FullTimeEmployee"]
+
+            //Employee fullTimeEmployee = new FullTimeEmployee() { Id = 1000, Name = "Eslam Elsaadany", Age = 22, Salary = 10_000 };
+
+            //ProcessEmployee(fullTimeEmployee); // Iam Employee!
+            //                                   // FullTimeEmployee => Id = 1000, Name = Eslam Elsaadany, Age = 22, Salary = $10,000.00
+            #endregion
+
+            #region Ex03.2 - Binding [this is Reference "partTimeEmployee" from Parent "Employee" refer to object "new PartTimeEmployee()" of type Child "PartTimeEmployee"]
+
+            //Employee partTimeEmployee = new PartTimeEmployee() { Id = 1001, Name = "Ahmed Ashraf", Age = 25, HourRate = 250 };
+
+            //ProcessEmployee(partTimeEmployee); // Iam Employee!
+            //                                   // PartTimeEmployee => Id = 1001, Name = Ahmed Ashraf, Age = 25, HourRate = 250
+            #endregion
+
+            #endregion
+
+            #endregion
         }
 
     }

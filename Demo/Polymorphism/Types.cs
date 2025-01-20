@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Demo.Polymorphism
 {
+
+    #region Part 09 What is Binding
+
     class TypeA
     {
         #region Properties
@@ -41,13 +44,13 @@ namespace Demo.Polymorphism
     {
 
         #region Properties
-        
+
         public int B { get; set; }
 
         #endregion
 
         #region Constructors
-        
+
         public TypeB(int a, int b) : base(a)
         {
             B = b;
@@ -108,4 +111,86 @@ namespace Demo.Polymorphism
 
     }
 
+    #endregion
+
+    #region  Part 11 Binding is a Behaviour
+
+    abstract class Employee
+    {
+
+        #region Properties
+
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public int Age { get; set; }
+
+        #endregion
+
+        #region methods
+
+        public void MyFunc01()
+        {
+            Console.WriteLine("Iam Employee!");
+        }
+
+        public virtual void MyFunc02()
+        {
+            Console.WriteLine($"Employee =>Id = {Id}, Name = {Name}, Age = {Age}");
+        }
+
+        #endregion
+
+    }
+
+    class FullTimeEmployee : Employee
+    {
+
+        #region Properties
+
+        public decimal Salary { get; set; }
+
+        #endregion
+
+        #region Methods
+
+        public new void MyFunc01()
+        {
+            Console.WriteLine("Iam Full Time Employee!");
+        }
+
+        public override void MyFunc02()
+        {
+            Console.WriteLine($"FullTimeEmployee => Id = {Id}, Name = {Name}, Age = {Age}, Salary = {Salary:c}");
+        }
+
+        #endregion
+
+    }
+
+    class PartTimeEmployee : Employee
+    {
+
+        #region Properties
+
+        public decimal HourRate { get; set; }
+
+        #endregion
+
+        #region Methods
+
+        public new void MyFunc01()
+        {
+            Console.WriteLine("Iam Part Time Employee!");
+        }
+
+        public override void MyFunc02()
+        {
+            Console.WriteLine($"PartTimeEmployee => Id = {Id}, Name = {Name}, Age = {Age}, HourRate = {HourRate}");
+        }
+
+        #endregion
+
+    }
+
+    #endregion
 }
