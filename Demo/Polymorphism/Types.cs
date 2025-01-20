@@ -46,7 +46,7 @@ namespace Demo.Polymorphism
 
         #endregion
 
-        #region onstructors
+        #region Constructors
         
         public TypeB(int a, int b) : base(a)
         {
@@ -73,4 +73,39 @@ namespace Demo.Polymorphism
         #endregion
 
     }
+
+    class TypeC : TypeA
+    {
+
+        #region Properties
+
+        public int C { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public TypeC(int a, int c) : base(a)
+        {
+            C = c;
+        }
+
+        #endregion
+
+        #region Methods
+
+        public new void MyFunc01()
+        {
+            Console.WriteLine("MyFunc01 => Iam Derived [Child]");
+        }
+
+        public override void MyFunc02()
+        {
+            Console.WriteLine($"MyFunc02 => TypeC: A = {A}, C = {C}"); ;
+        }
+
+        #endregion
+
+    }
+
 }

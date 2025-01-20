@@ -332,6 +332,37 @@ namespace Demo
 
             #endregion
 
+            #region Part 10 Child is Parent [not vice versa]
+
+            //TypeA typeA = new TypeA(1);//Reference of type Parent "TypeA" can refer to object of type Parent "TypeA" or object of type Child "TypeB";
+            //typeA = new TypeB(1,2);//Reference of type Parent "TypeA" can refer to object of type Child "TypeB";
+
+            #region Ex01 - Reference "typeB" of type Child "TypeB" Hold Reference "typeA" which of type Parent "TypeA" - but the reference "typeA" Refer To object of type "TypeB"  - so no runTime error when casting. 
+
+            ////Note => Reference of type Child "TypeB" can only refer to object of type Child "TypeB".
+
+            ////TypeB typeB = typeA;
+            //// Reference From Child "TypeB" can refer to object from Child "TypeB" only - But Why it not work , although the reference "typeA" refer to object of type "TypeB" ?
+            //// That's because the reference "typeA" not only can refer to object of type "TypeB", it can refer to another objects of another types inherit from "TypeA", so compiler want you to specify the type of this object [that this reference "typeA" refer to]  first by make explicit casting using casting operator (TypeB).
+
+            //TypeB typeB = (TypeB)typeA;
+            //Console.WriteLine(typeB.A);// 1
+            //Console.WriteLine(typeB.B);// 2 
+
+            #endregion
+
+            #region Ex02 - Reference "typeB" of type Child "TypeB" Hold Reference "typeA" which of type Parent "TypeA" - but the reference "typeA" Refer To object of type "TypeC"  - so it cause runTime error when casting Because can't assign address of "TypeC" object to Reference of type "TypeB". 
+
+            //typeA = new TypeC(2, 4);
+
+            //TypeB typeB = (TypeB)typeA;
+            //Console.WriteLine(typeB.A);// RunTimeError : Unable to cast object of type 'TypeC' to type 'TypeB'.
+            //Console.WriteLine(typeB.B);// RunTimeError : Unable to cast object of type 'TypeC' to type 'TypeB'.
+
+            #endregion
+
+            #endregion
+
         }
 
     }
