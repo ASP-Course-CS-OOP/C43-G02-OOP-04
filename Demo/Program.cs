@@ -473,7 +473,7 @@ namespace Demo
             //typeB.B = 12;// "typeB" can see the "B" which is property of class "TypeB" Inside class "TypeC".
             ////typeB.C = 15;// "typeB" can't see the "C" which is property of class "TypeC" Inside class "TypeC".
 
-            //typeB.MyFunc01();// MyFunc01 => Iam Base [Parent] => [Because it's static binded method ( Binded based on reference Type "TypeA" )].
+            //typeB.MyFunc01();// MyFunc01 => Iam Derived [Child] => [Because it's static binded method ( Binded based on reference Type "TypeB" )].
             //typeB.MyFunc02();// MyFunc02 => TypeC: A = 1,B = 12, C = 3 => [because it's dynamic binded method ( Binded based on object Type "TypeC" )] 
 
             #endregion
