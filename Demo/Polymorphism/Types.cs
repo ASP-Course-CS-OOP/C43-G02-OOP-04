@@ -30,7 +30,7 @@ namespace Demo.Polymorphism
 
         public void MyFunc01()
         {
-            Console.WriteLine("MyFunc01 => Iam Base [Parent]");
+            Console.WriteLine("MyFunc01 => TypeA: Iam Base [Parent]");
         }
         public virtual void MyFunc02()
         {
@@ -64,7 +64,7 @@ namespace Demo.Polymorphism
         //you can make new method with same name and hide the inherited method => using "new" keyword.
         public new void MyFunc01() // Static Binded Method [Because new Keyword]
         {
-            Console.WriteLine("MyFunc01 => Iam Derived [Child]");
+            Console.WriteLine("MyFunc01 => TypeB: Iam Derived [Child]");
         }
 
         //Apply Overriding using "override" Keyword => But Method "MyFunc02()" must be non-private and virtual inside parent class to make override on it.
@@ -77,7 +77,7 @@ namespace Demo.Polymorphism
 
     }
 
-    class TypeC : TypeA
+    class TypeC : TypeB
     {
 
         #region Properties
@@ -88,7 +88,7 @@ namespace Demo.Polymorphism
 
         #region Constructors
 
-        public TypeC(int a, int c) : base(a)
+        public TypeC(int a, int b , int c) : base(a,b)
         {
             C = c;
         }
@@ -99,17 +99,86 @@ namespace Demo.Polymorphism
 
         public new void MyFunc01()
         {
-            Console.WriteLine("MyFunc01 => Iam Derived [Child]");
+            Console.WriteLine("MyFunc01 => TypeC: Iam Derived [GrandChild]");
         }
 
         public override void MyFunc02()
         {
-            Console.WriteLine($"MyFunc02 => TypeC: A = {A}, C = {C}"); ;
+            Console.WriteLine($"MyFunc02 => TypeC: A = {A},B = {B}, C = {C}") ;
         }
 
         #endregion
 
     }
+
+    class TypeD : TypeC
+    {
+
+        #region Properties
+
+        public int D { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public TypeD(int a, int b, int c,int d) : base(a, b,c)
+        {
+            D = d;
+        }
+
+        #endregion
+
+        #region Methods
+
+        public new void MyFunc01()
+        {
+            Console.WriteLine("MyFunc01 => TypeD: Iam Derived [GrandChild]");
+        }
+
+        public virtual new void MyFunc02() // Not override the "MyFunc02()" of parent "TypeC" - Make new version specific to class "TypeD" - Break The Chain of overriding that starts inside "TypeA" with virtual method "virtual MyFunc02()" - and start new chain of overriding starts with "TypeD" virtual new method.
+        {
+            Console.WriteLine($"MyFunc02 => TypeD: A = {A},B = {B}, C = {C}, D = {D}"); ;
+        }
+
+        #endregion
+
+    }
+
+    class TypeE : TypeD
+    {
+
+        #region Properties
+
+        public int E { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public TypeE(int a, int b, int c,int d, int e) : base(a, b,c,d)
+        {
+            E = e;
+        }
+
+        #endregion
+
+        #region Methods
+
+        public new void MyFunc01()
+        {
+            Console.WriteLine("MyFunc01 => TypeE: Iam Derived [GrandChild]");
+        }
+
+        public override void MyFunc02()
+        {
+            Console.WriteLine($"MyFunc02 => TypeE: A = {A},B = {B}, C = {C}, D = {D}, E = {E}"); ;
+        }
+
+        #endregion
+
+    }
+
 
     #endregion
 
@@ -193,4 +262,5 @@ namespace Demo.Polymorphism
     }
 
     #endregion
+
 }

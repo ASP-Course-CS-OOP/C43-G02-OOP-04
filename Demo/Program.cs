@@ -451,6 +451,65 @@ namespace Demo
             #endregion
 
             #endregion
+
+            #region Part 12 More Practice On Binding
+
+            #region Ex01 - TypeA typeA = new TypeC(1, 2, 3); - Binding
+
+            //TypeA typeA = new TypeC(1, 2, 3);
+            //typeA.A = 11;// "typeA" can see only the members of class "TypeA" inside class "TypeC" which are ( A,MyFunc01(),MyFunc02() ). 
+            ////typeA.B = 12;// "typeA" can't see the "B" which is property of class "TypeB" Inside class "TypeC".
+            ////typeA.C = 15;// "typeA" can't see the "C" which is property of class "TypeC" Inside class "TypeC".
+
+            //typeA.MyFunc01();// MyFunc01 => Iam Base [Parent] => [Because it's static binded method ( Binded based on reference Type "TypeA" )].
+            //typeA.MyFunc02();// MyFunc02 => TypeC: A = 1,B = 2, C = 3 => [because it's dynamic binded method ( Binded based on object Type "TypeC" )] 
+
+            #endregion
+
+            #region Ex02 - TypeB typeB = new TypeC(1, 2, 3); - Binding
+
+            //TypeB typeB = new TypeC(1, 2, 3);
+            //typeB.A = 11;// "typeB" can see only the members of class "TypeB" inside class "TypeC" which are ( A,B,MyFunc01(),MyFunc02() ). 
+            //typeB.B = 12;// "typeB" can see the "B" which is property of class "TypeB" Inside class "TypeC".
+            ////typeB.C = 15;// "typeB" can't see the "C" which is property of class "TypeC" Inside class "TypeC".
+
+            //typeB.MyFunc01();// MyFunc01 => Iam Base [Parent] => [Because it's static binded method ( Binded based on reference Type "TypeA" )].
+            //typeB.MyFunc02();// MyFunc02 => TypeC: A = 1,B = 12, C = 3 => [because it's dynamic binded method ( Binded based on object Type "TypeC" )] 
+
+            #endregion
+
+            #region Ex03 - TypeC typeC = new TypeC(1, 2, 3); - No Binding
+
+            //TypeC typeC = new TypeC(1, 2, 3);
+            //typeC.A = 11;// "typeC" can see only the members of class "TypeC" inside class "TypeC" which are ( A,B,C,MyFunc01(),MyFunc02() ). 
+            //typeC.B = 12;// "typeC" can see the "B" which is property of class "TypeB" Inside class "TypeC".
+            //typeC.C = 15;// "typeC" can see the "C" which is property of class "TypeC" Inside class "TypeC".
+
+            //typeC.MyFunc01();// MyFunc01 => Iam Derived [GrandChild] - No Binding
+            //typeC.MyFunc02();// MyFunc02 => TypeC: A = 11,B = 12, C = 15 - No Binding
+
+            #endregion
+
+            #region Ex04
+            
+            //TypeA typeA = new TypeE(1, 2, 3, 4, 5);
+            //TypeB typeB = new TypeE(1, 2, 3, 4, 5);
+            //TypeC typeC = new TypeE(1, 2, 3, 4, 5);
+
+            //typeA.MyFunc02();// MyFunc02 => TypeC: A = 1,B = 2, C = 3
+            //typeB.MyFunc02();// MyFunc02 => TypeC: A = 1,B = 2, C = 3
+            //typeC.MyFunc02();// MyFunc02 => TypeC: A = 1,B = 2, C = 3
+
+            //Console.WriteLine("\n= After Break The Chain of overriding in class \"TypeD\" =\n");
+
+            //TypeD typeD = new TypeE(1, 2, 3, 4, 5);
+
+            //typeD.MyFunc02();// MyFunc02 => TypeE: A = 1,B = 2, C = 3, D = 4, E = 5 
+
+            #endregion
+
+            #endregion
+
         }
 
     }
