@@ -77,6 +77,8 @@ namespace Demo.Polymorphism
 
     }
 
+    #region Part 12 More Practice On Binding
+
     class TypeC : TypeB
     {
 
@@ -88,7 +90,7 @@ namespace Demo.Polymorphism
 
         #region Constructors
 
-        public TypeC(int a, int b , int c) : base(a,b)
+        public TypeC(int a, int b, int c) : base(a, b)
         {
             C = c;
         }
@@ -104,7 +106,7 @@ namespace Demo.Polymorphism
 
         public override void MyFunc02()
         {
-            Console.WriteLine($"MyFunc02 => TypeC: A = {A},B = {B}, C = {C}") ;
+            Console.WriteLine($"MyFunc02 => TypeC: A = {A},B = {B}, C = {C}");
         }
 
         #endregion
@@ -122,7 +124,7 @@ namespace Demo.Polymorphism
 
         #region Constructors
 
-        public TypeD(int a, int b, int c,int d) : base(a, b,c)
+        public TypeD(int a, int b, int c, int d) : base(a, b, c)
         {
             D = d;
         }
@@ -156,7 +158,7 @@ namespace Demo.Polymorphism
 
         #region Constructors
 
-        public TypeE(int a, int b, int c,int d, int e) : base(a, b,c,d)
+        public TypeE(int a, int b, int c, int d, int e) : base(a, b, c, d)
         {
             E = e;
         }
@@ -177,7 +179,9 @@ namespace Demo.Polymorphism
 
         #endregion
 
-    }
+    } 
+
+    #endregion
 
 
     #endregion
