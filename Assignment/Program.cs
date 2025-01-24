@@ -1,4 +1,7 @@
-﻿namespace Assignment
+﻿using Assignment.Part02___Q2;
+using Assignment.Part03___Q3;
+
+namespace Assignment
 {
     internal class Program
     {
@@ -71,53 +74,65 @@
 
             #region Part02
 
-            #region Q01 - Define an interface named IShape with a property Area and a methodDisplayShapeInfo.Create two interfaces, ICircle and IRectangle, that inherit fromIShape.Implement these interfaces in classes Circle and Rectangle. Test yourimplementation by creating instances of both classes and displaying their shapeinformation.
+            #region Q1 - Define an interface named IShape with a property Area and a method DisplayShapeInfo. 
 
-            //ICircle circle = new Circle(5);
-            //circle.DisplayShapeInfo();
+            //ICircle1 circle1 = new Circle1(5);
 
-            //IRectangle rectangle = new Rectangle(4, 6);
-            //rectangle.DisplayShapeInfo();
+            //circle1.DisplayShapeInfo();
+
+            //Console.WriteLine("-------------------------------");
+
+            //IRectangle1 rectangle1 = new Rectangle1(4,5);
+
+            //rectangle1.DisplayShapeInfo();
 
             #endregion
 
-            #region Q02 - In this example, we start by defining the IAuthenticationService interface with two methods: AuthenticateUser and AuthorizeUser.The BasicAuthenticationServiceclass implements this interface and provides the specific implementation for thesemethods.
+            #region Q2 - In this example, we start by defining the IAuthenticationService interface with two methods: AuthenticateUser and AuthorizeUser
 
-            //IAuthenticationService authService = new BasicAuthenticationService();
-
-            //string username = "user1";
-            //string password = "password1";
-            //string role = "Admin";
-
-            //if (authService.AuthenticateUser(username, password))
+            //string name;
+            //do
             //{
-            //    Console.WriteLine($"{username} authenticated successfully.");
-            //    if (authService.AuthorizeUser(username, role))
-            //    {
-            //        Console.WriteLine($"{username} authorized as {role}.");
-            //    }
+            //    Console.Write("Enter Your Name: ");
+            //    name = Console.ReadLine()!;
+            //} while (string.IsNullOrWhiteSpace(name));
+
+            //string password;
+            //do
+            //{
+            //    Console.Write("Enter Your Password: ");
+            //    password = Console.ReadLine()!;
+            //} while (string.IsNullOrWhiteSpace(password));
+
+            //IAuthenticationServicee authenticationServicee = new BasicAuthenticationServicee();
+            //if (authenticationServicee.AuthenticateUser(name, password))
+            //{
+            //    Console.WriteLine($"Hello {name}, You Are Authenticated!");
+
+            //    Console.Write("Enter Your Role: ");
+            //    Enum.TryParse<Role>(Console.ReadLine(), true, out Role role);
+
+            //    if (authenticationServicee.AuthorizeUser(name, role))
+            //        Console.WriteLine($"You Are Authorized as {role}!");
             //    else
-            //    {
-            //        Console.WriteLine($"{username} is not authorized as {role}.");
-            //    }
+            //        Console.WriteLine($"Invalid Role for {name}!");
             //}
             //else
-            //{
-            //    Console.WriteLine("Authentication failed.");
-            //}
+            //    Console.WriteLine($"Authenticated for {name} failed!");
+
 
             #endregion
 
-            #region Q03 - we define the INotificationService interface with a method SendNotification that takes a recipient and a message as parameters.
+            #region Q3 - we define the INotificationService interface with a method SendNotification that takes a recipient and a message as parameters.
 
-            //INotificationService emailService = new EmailNotificationService();
-            //emailService.SendNotification("eslam.saadany22@gmail.com", "Welcome to the platform!");
+            //INotificationServicee notificationService = new EmailNotificationServicee();
+            //notificationService.SendNotification("eslam.saadany22@gmail.com", "Hello This is Email Notification!");
 
-            //INotificationService smsService = new SmsNotificationService();
-            //smsService.SendNotification("01022010887", "Your OTP is 123456.");
+            //notificationService = new SmsNotificationServicee();
+            //notificationService.SendNotification("01022010887", "This is the OTP (145987)");
 
-            //INotificationService pushService = new PushNotificationService();
-            //pushService.SendNotification("Iphone 8 Plus", "You have a new message.");
+            //notificationService = new PushNotificationServicee();
+            //notificationService.SendNotification("Iphone 8 plus", "You have 3 missed call!");
 
             #endregion
 

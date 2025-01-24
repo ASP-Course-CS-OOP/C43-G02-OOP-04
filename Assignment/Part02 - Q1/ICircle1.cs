@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Assignment
 {
-    internal interface INotificationService
+    internal interface ICircle1:IShape1
     {
-        public void SendNotification(string recipient, string message);
+
+        #region Signature For Properties
+        
+        public double Radius { get; set; } 
+
+        #endregion
+
     }
 }
